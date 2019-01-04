@@ -157,13 +157,17 @@ footer{
 			<span class="span3">。</span>
 		</div>
 		<br>
-		<button class="no" id="not">b不吃！</button>
+		<button class="no" id="not">c不吃！</button>
 	</article>
 </main>
 <footer>
 
 </footer>
 <script type="text/javascript">
+
+$(function(){
+
+
 var rand1 = parseInt(Math.random()*44);
 quotes = new Array;
 quotes[0] = '<span class="span1">炒</span><span class="span2">面</span><span class="span3">。</span>';
@@ -213,11 +217,10 @@ quotes[43] = '<span class="span1">热</span><span class="span2">干</span><span 
 quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span class="span3">煲</span><span class="span4">。</span>';
 var quote = quotes[rand1];
 $("#content-desc").html(quote);
-$("#not").click(function(){
-        window.location.reload();
-});
+$("#not").on("click",function(){
 	
-	
+})
+});	
 </script>
 
 
