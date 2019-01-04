@@ -157,7 +157,7 @@ footer{
 			<span class="span3">。</span>
 		</div>
 		<br>
-		<button class="no" id="not">w不吃！</button>
+		<div class="no" id="not">a不吃！</div>
 	</article>
 </main>
 <footer>
@@ -213,13 +213,9 @@ quotes[43] = '<span class="span1">热</span><span class="span2">干</span><span 
 quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span class="span3">煲</span><span class="span4">。</span>';
 var quote = quotes[rand1];
 $("#content-desc").html(quote);
-function onTouchEnd(){
-        window.location.reload();
-};
-function startrad(){
-    var dom = document.getElementById('not');
-    dom.addEventListener('touchend', onTouchEnd, false);
-}
+$(doucument).on('click','#not',function(){
+	window.location.reload();
+})
 	
 	
 </script>
