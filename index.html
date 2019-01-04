@@ -219,7 +219,7 @@ var quote = quotes[rand1];
 $("#content-desc").html(quote);
 $("#not").on("click",function(){
 	alert("1");
-	window.location.reload();
+	window.location.href = location.href+'?time='+((new Date()).getTime());
 	
 })
 });	
