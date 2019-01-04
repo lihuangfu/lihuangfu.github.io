@@ -158,6 +158,7 @@ footer{
 		</div>
 		<br>
 		<button class="no" id="not">不吃！</button>
+		<input type="text" id="txt_value" style=""/>
 	</article>
 </main>
 <footer>
@@ -167,59 +168,74 @@ footer{
 
 $(function(){
 
+	function radomstart(){
+		var rand1 = parseInt(Math.random()*44);
+		quotes = new Array;
+		quotes[0] = '<span class="span1">炒</span><span class="span2">面</span><span class="span3">。</span>';
+		quotes[1] = '<span class="span1">炒</span><span class="span2">饭</span><span class="span3">。</span>';
+		quotes[2] = '<span class="span1">包</span><span class="span2">子</span><span class="span3">粥</span><span class="span4">。</span>';
+		quotes[3] = '<span class="span1">肉</span><span class="span2">夹</span><span class="span3">馍</span><span class="span4">。</span>';
+		quotes[4] = '<span class="span1">黄</span><span class="span2">焖</span><span class="span3">鸡</span><span class="span4">米</span><span class="span5">饭</span><span class="span6">。</span>';
+		quotes[5] = '<span class="span1">麻</span><span class="span2">辣</span><span class="span3">香</span><span class="span4">锅</span><span class="span5">。</span>';
+		quotes[6] = '<span class="span1">饺</span><span class="span2">子</span><span class="span3">。</span>';
+		quotes[7] = '<span class="span1">馄</span><span class="span2">饨</span><span class="span3">。</span>';
+		quotes[8] = '<span class="span1">龙</span><span class="span2">虾</span><span class="span3">饭</span><span class="span4">。</span>';
+		quotes[9] = '<span class="span1">拉</span><span class="span2">面</span><span class="span3">。</span>';
+		quotes[10] = '<span class="span1">汉</span><span class="span2">堡</span><span class="span3">炸</span><span class="span4">鸡</span><span class="span5">。</span>';
+		quotes[11] = '<span class="span1">卷</span><span class="span2">饼</span><span class="span3">。</span>';
+		quotes[12] = '<span class="span1">米</span><span class="span2">线</span><span class="span3">。</span>';
+		quotes[13] = '<span class="span1">便</span><span class="span2">当</span><span class="span3">。</span>';
+		quotes[14] = '<span class="span1">烤</span><span class="span2">肉</span><span class="span3">拌</span><span class="span4">饭</span><span class="span5">。</span>';
+		quotes[15] = '<span class="span1">锅</span><span class="span2">贴</span><span class="span3">。</span>';
+		quotes[16] = '<span class="span1">麻</span><span class="span2">辣</span><span class="span3">烫</span><span class="span4">。</span>';
+		quotes[17] = '<span class="span1">冒</span><span class="span2">菜</span><span class="span3">。</span>';
+		quotes[18] = '<span class="span1">比</span><span class="span2">萨</span><span class="span3">。</span>';
+		quotes[19] = '<span class="span1">盖</span><span class="span2">饭</span><span class="span3">。</span>';
+		quotes[20] = '<span class="span1">煲</span><span class="span2">仔</span><span class="span3">饭</span><span class="span4">。</span>';
+		quotes[21] = '<span class="span1">火</span><span class="span2">锅</span><span class="span3">。</span>';
+		quotes[22] = '<span class="span1">驴</span><span class="span2">肉</span><span class="span3">火</span><span class="span4">烧</span><span class="span5">。</span>';
+		quotes[23] = '<span class="span1">凉</span><span class="span2">皮</span><span class="span3">。</span>';
+		quotes[24] = '<span class="span1">牛</span><span class="span2">羊</span><span class="span3">肉</span><span class="span4">汤</span><span class="span5">。</span>';
+		quotes[25] = '<span class="span1">春</span><span class="span2">饼</span><span class="span3">。</span>';
+		quotes[26] = '<span class="span1">芝</span><span class="span2">士</span><span class="span3">饭</span><span class="span4">。</span>';
+		quotes[27] = '<span class="span1">寿</span><span class="span2">司</span><span class="span3">。</span>';
+		quotes[28] = '<span class="span1">鲁</span><span class="span2">菜</span><span class="span3">。</span>';
+		quotes[29] = '<span class="span1">川</span><span class="span2">菜</span><span class="span3">。</span>';
+		quotes[30] = '<span class="span1">湘</span><span class="span2">菜</span><span class="span3">。</span>';
+		quotes[31] = '<span class="span1">东</span><span class="span2">北</span><span class="span3">菜</span><span class="span4">。</span>';
+		quotes[32] = '<span class="span1">生</span><span class="span2">煎</span><span class="span3">。</span>';
+		quotes[33] = '<span class="span1">烤</span><span class="span2">肉</span><span class="span3">。</span>';
+		quotes[34] = '<span class="span1">烤</span><span class="span2">鱼</span><span class="span3">。</span>';
+		quotes[35] = '<span class="span1">螺</span><span class="span2">蛳</span><span class="span3">粉</span><span class="span4">。</span>';
+		quotes[36] = '<span class="span1">蛋</span><span class="span2">糕</span><span class="span3">三</span><span class="span4">明</span><span class="span5">治</span><span class="span6">。</span>';
+		quotes[37] = '<span class="span1">意</span><span class="span2">面</span><span class="span3">。</span>';
+		quotes[38] = '<span class="span1">小</span><span class="span2">龙</span><span class="span3">虾</span><span class="span4">。</span>';
+		quotes[39] = '<span class="span1">排</span><span class="span2">骨</span><span class="span3">米</span><span class="span4">饭</span><span class="span5">。</span>';
+		quotes[40] = '<span class="span1">串</span><span class="span2">串</span><span class="span3">。</span>';
+		quotes[41] = '<span class="span1">卤</span><span class="span2">肉</span><span class="span3">饭</span><span class="span4">。</span>';
+		quotes[42] = '<span class="span1">新</span><span class="span2">疆</span><span class="span3">菜</span><span class="span4">。</span>';
+		quotes[43] = '<span class="span1">热</span><span class="span2">干</span><span class="span3">面</span><span class="span4">。</span>';
+		quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span class="span3">煲</span><span class="span4">。</span>';
+		var quote = quotes[rand1];
+		$("#content-desc").html(quote);		
+	}
 
-var rand1 = parseInt(Math.random()*44);
-quotes = new Array;
-quotes[0] = '<span class="span1">炒</span><span class="span2">面</span><span class="span3">。</span>';
-quotes[1] = '<span class="span1">炒</span><span class="span2">饭</span><span class="span3">。</span>';
-quotes[2] = '<span class="span1">包</span><span class="span2">子</span><span class="span3">粥</span><span class="span4">。</span>';
-quotes[3] = '<span class="span1">肉</span><span class="span2">夹</span><span class="span3">馍</span><span class="span4">。</span>';
-quotes[4] = '<span class="span1">黄</span><span class="span2">焖</span><span class="span3">鸡</span><span class="span4">米</span><span class="span5">饭</span><span class="span6">。</span>';
-quotes[5] = '<span class="span1">麻</span><span class="span2">辣</span><span class="span3">香</span><span class="span4">锅</span><span class="span5">。</span>';
-quotes[6] = '<span class="span1">饺</span><span class="span2">子</span><span class="span3">。</span>';
-quotes[7] = '<span class="span1">馄</span><span class="span2">饨</span><span class="span3">。</span>';
-quotes[8] = '<span class="span1">龙</span><span class="span2">虾</span><span class="span3">饭</span><span class="span4">。</span>';
-quotes[9] = '<span class="span1">拉</span><span class="span2">面</span><span class="span3">。</span>';
-quotes[10] = '<span class="span1">汉</span><span class="span2">堡</span><span class="span3">炸</span><span class="span4">鸡</span><span class="span5">。</span>';
-quotes[11] = '<span class="span1">卷</span><span class="span2">饼</span><span class="span3">。</span>';
-quotes[12] = '<span class="span1">米</span><span class="span2">线</span><span class="span3">。</span>';
-quotes[13] = '<span class="span1">便</span><span class="span2">当</span><span class="span3">。</span>';
-quotes[14] = '<span class="span1">烤</span><span class="span2">肉</span><span class="span3">拌</span><span class="span4">饭</span><span class="span5">。</span>';
-quotes[15] = '<span class="span1">锅</span><span class="span2">贴</span><span class="span3">。</span>';
-quotes[16] = '<span class="span1">麻</span><span class="span2">辣</span><span class="span3">烫</span><span class="span4">。</span>';
-quotes[17] = '<span class="span1">冒</span><span class="span2">菜</span><span class="span3">。</span>';
-quotes[18] = '<span class="span1">比</span><span class="span2">萨</span><span class="span3">。</span>';
-quotes[19] = '<span class="span1">盖</span><span class="span2">饭</span><span class="span3">。</span>';
-quotes[20] = '<span class="span1">煲</span><span class="span2">仔</span><span class="span3">饭</span><span class="span4">。</span>';
-quotes[21] = '<span class="span1">火</span><span class="span2">锅</span><span class="span3">。</span>';
-quotes[22] = '<span class="span1">驴</span><span class="span2">肉</span><span class="span3">火</span><span class="span4">烧</span><span class="span5">。</span>';
-quotes[23] = '<span class="span1">凉</span><span class="span2">皮</span><span class="span3">。</span>';
-quotes[24] = '<span class="span1">牛</span><span class="span2">羊</span><span class="span3">肉</span><span class="span4">汤</span><span class="span5">。</span>';
-quotes[25] = '<span class="span1">春</span><span class="span2">饼</span><span class="span3">。</span>';
-quotes[26] = '<span class="span1">芝</span><span class="span2">士</span><span class="span3">饭</span><span class="span4">。</span>';
-quotes[27] = '<span class="span1">寿</span><span class="span2">司</span><span class="span3">。</span>';
-quotes[28] = '<span class="span1">鲁</span><span class="span2">菜</span><span class="span3">。</span>';
-quotes[29] = '<span class="span1">川</span><span class="span2">菜</span><span class="span3">。</span>';
-quotes[30] = '<span class="span1">湘</span><span class="span2">菜</span><span class="span3">。</span>';
-quotes[31] = '<span class="span1">东</span><span class="span2">北</span><span class="span3">菜</span><span class="span4">。</span>';
-quotes[32] = '<span class="span1">生</span><span class="span2">煎</span><span class="span3">。</span>';
-quotes[33] = '<span class="span1">烤</span><span class="span2">肉</span><span class="span3">。</span>';
-quotes[34] = '<span class="span1">烤</span><span class="span2">鱼</span><span class="span3">。</span>';
-quotes[35] = '<span class="span1">螺</span><span class="span2">蛳</span><span class="span3">粉</span><span class="span4">。</span>';
-quotes[36] = '<span class="span1">蛋</span><span class="span2">糕</span><span class="span3">三</span><span class="span4">明</span><span class="span5">治</span><span class="span6">。</span>';
-quotes[37] = '<span class="span1">意</span><span class="span2">面</span><span class="span3">。</span>';
-quotes[38] = '<span class="span1">小</span><span class="span2">龙</span><span class="span3">虾</span><span class="span4">。</span>';
-quotes[39] = '<span class="span1">排</span><span class="span2">骨</span><span class="span3">米</span><span class="span4">饭</span><span class="span5">。</span>';
-quotes[40] = '<span class="span1">串</span><span class="span2">串</span><span class="span3">。</span>';
-quotes[41] = '<span class="span1">卤</span><span class="span2">肉</span><span class="span3">饭</span><span class="span4">。</span>';
-quotes[42] = '<span class="span1">新</span><span class="span2">疆</span><span class="span3">菜</span><span class="span4">。</span>';
-quotes[43] = '<span class="span1">热</span><span class="span2">干</span><span class="span3">面</span><span class="span4">。</span>';
-quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span class="span3">煲</span><span class="span4">。</span>';
-var quote = quotes[rand1];
-$("#content-desc").html(quote);
-$("#not").on("click",function(){
-	window.location.href = location.href+'?time='+((new Date()).getTime());	
-})
+	$("#not").on("click",function(){	
+		var txt = document.querySelector("#txt_value");
+		var now = txt.value - 0;
+		now = now + 1;
+		txt.value = now;
+		//window.location.href = location.href+'?time='+((new Date()).getTime());	
+		radomstart();
+		if (now==10){
+			alert("又挑食");
+		}else if (now==20){
+			alert("再点打你");
+		}
+		
+	})
+
+
 });	
 </script>
 
