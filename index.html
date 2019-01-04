@@ -14,24 +14,22 @@ main{
 	height: 30rem;
 }
 .contents{
-	padding: 15rem 0;
+	padding: 5rem 0;
 } 	
 #content-desc{
 	width: 85%;
-	margin: -102px auto;
 	font-family: KaiTi;
-	//font-size: 19px;
 }
 .no{
+	display: block;
 	width: 5rem;
 	height: 2rem;
 	background: #dacfcb;
-	margin-top: 20px;
-	margin-left: 100px;
 	font-family: KaiTi;
 	border: none;
 	border-radius: .3rem;
 	outline:none;
+	margin:20px auto;
 }	
 footer{
 	width: 100%;
@@ -145,6 +143,15 @@ footer{
             color:#327fc2;  
         }  
     }  
+	.imgswip{
+    	width: 80%;
+    	height: auto;
+    	margin:10px auto;
+    }
+    .imgswip img{
+    	width: 100%;
+    	height: auto;
+    }
 	</style>
 
 <meta name="GENERATOR" content="MSHTML 9.00.8112.16723"></head>
@@ -159,6 +166,9 @@ footer{
 		<br>
 		<button class="no" id="not">不吃！</button>
 		<input type="text" id="txt_value" style="display:none;"/>
+		<div class="imgswip">
+			<img src="1.jpg" id="imgswipsrc">			
+		</div>
 	</article>
 </main>
 <footer>
@@ -228,21 +238,24 @@ $(function(){
 		//window.location.href = location.href+'?time='+((new Date()).getTime());	
 		radomstart();
 		if (now==10){
-			alert("又挑食");
+			alert("又挑食");			
 		}else if (now==20){
 			alert("再点打你啊");
 		}else if (now==30){
 			alert("还点？");
+			$('#imgswipsrc').attr('src','2.jpg');
 		}else if (now==40){
-			alert("就吃这个吧");
+			alert("就吃这个吧");			
 		}else if (now==50){
 			alert("是不是没挨过黑社会毒打？");
 		}else if (now==60){
 			alert("别点啦");
+			$('#imgswipsrc').attr('src','3.jpg');
 		}else if (now==65){
 			alert("要是实在没有你想吃的");
 		}else if (now==66){
 			alert("我做饭给你吃吧");
+			$('#imgswipsrc').attr('src','4.jpg');
 		}else if (now==68){
 			alert("没啦");
 		}else if (now==70){
