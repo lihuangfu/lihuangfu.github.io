@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>random</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no">
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <style>
 body{
 	background: #eaeaea;
@@ -157,7 +157,7 @@ footer{
 			<span class="span3">。</span>
 		</div>
 		<br>
-		<div class="no" id="not">a不吃！</div>
+		<button class="no" id="not">b不吃！</button>
 	</article>
 </main>
 <footer>
@@ -213,9 +213,9 @@ quotes[43] = '<span class="span1">热</span><span class="span2">干</span><span 
 quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span class="span3">煲</span><span class="span4">。</span>';
 var quote = quotes[rand1];
 $("#content-desc").html(quote);
-$(doucument).on('click','#not',function(){
-	window.location.reload();
-})
+$("#not").click(function(){
+        window.location.reload();
+});
 	
 	
 </script>
