@@ -157,7 +157,7 @@ footer{
 			<span class="span3">。</span>
 		</div>
 		<br>
-		<button class="no" id="not">c不吃！</button>
+		<button class="no" id="not">x不吃！</button>
 	</article>
 </main>
 <footer>
@@ -218,7 +218,9 @@ quotes[44] = '<span class="span1">鸡</span><span class="span2">公</span><span 
 var quote = quotes[rand1];
 $("#content-desc").html(quote);
 $("#not").on("click",function(){
+	alert("1");
 	window.location.reload();
+	
 })
 });	
 </script>
